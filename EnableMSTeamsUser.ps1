@@ -33,7 +33,6 @@ foreach ($user in $users)
    Grant-CsTeamsUpgradePolicy -Identity $user.Email -PolicyName UpgradeToTeams
    Set-CsPhoneNumberAssignment -Identity $user.Email -EnterpriseVoiceEnabled $true
    Set-CsPhoneNumberAssignment -Identity $user.Email -PhoneNumber $NewPhone -PhoneNumberType DirectRouting
-   #Set-CsUser -Identity $user.Email -EnterpriseVoiceEnabled $true -HostedVoiceMail $true -OnPremLineURI $NewPhone
-   #Grant-CsOnlineVoiceRoutingPolicy -Identity $user.Email  -PolicyName $user.VoicePolicy
+   Grant-CsOnlineVoiceRoutingPolicy -Identity $user.Email  -PolicyName $user.VoicePolicy
    $NewPhone = ""
  }
