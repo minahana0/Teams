@@ -1,0 +1,2 @@
+#Export all users info with skype for business attributes.
+Get-ADUser -Filter * -SearchBase "DC=tatalya,DC=online" -Properties * | Select-Object Name,UserPrincipalName, Mail, Enabled, msRTCSIP–DeploymentLocator , msRTCSIP-FederationEnabled, msRTCSIP-InternetAccessEnabled, msRTCSIP-Line, msRTCSIP-OptionFlag, msRTCSIP-PrimaryHomeServer, msRTCSIP–PrimaryUserAddress, msRTCSIP–UserEnabled, msRTCSIP-UserPolicies, msRTCSIP-UserRoutingGroupId ,msRTCSIP-ArchivingEnabled | Export-Csv C:\temp\Skypeusersinfo.csv -NoTypeInformation
